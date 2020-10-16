@@ -34,7 +34,8 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     // size of texture coordinate datasize
     private final int mTexCoordinateDataSize = 2;
 
-    final int[] mTextureDataHandle = new int[2];
+    final int[] mTextureDataHandle = new int[1];
+    final int[] mTextureDataHandle1 = new int[1];
 
     /** This is a handle to our shading program. */
     private int mProgramHandle;
@@ -348,12 +349,12 @@ public class GLRenderer implements GLSurfaceView.Renderer {
             GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, bmpimg, 0);
 
 
-            GLES20.glGenTextures(1, mTextureDataHandle, 1);
-            final Bitmap bmpimg1 = BitmapFactory.decodeStream(context
-                    .getAssets().open("OpenGL.png"));
-            GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, mTextureDataHandle[1]);
-            // Load the bitmap into the bound texture.
-            GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, bmpimg1, 0);
+//            GLES20.glGenTextures(1, mTextureDataHandle1, 1);
+//            final Bitmap bmpimg1 = BitmapFactory.decodeStream(context
+//                    .getAssets().open("OpenGL.png"));
+//            GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, mTextureDataHandle1[0]);
+//            // Load the bitmap into the bound texture.
+//            GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, bmpimg1, 0);
 
 
             GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_S, GLES20.GL_CLAMP_TO_EDGE);
@@ -361,7 +362,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 
             // Recycle the bitmap, since its data has been loaded into OpenGL.
             bmpimg.recycle();
-            bmpimg1.recycle();
+//            bmpimg1.recycle();
 
         } catch (IOException e) {
             // TODO Auto-generated catch block

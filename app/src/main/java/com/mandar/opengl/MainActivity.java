@@ -1,14 +1,20 @@
 package com.mandar.opengl;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
 
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.ConfigurationInfo;
+import android.graphics.drawable.Drawable;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,6 +47,26 @@ public class MainActivity extends AppCompatActivity {
             // renderer if you wanted to support both ES 1 and ES 2.
             return;
         }
+
+
+
+//        try
+//        {
+//            ImageView iv = (ImageView)findViewById(R.id.imageView);
+//
+//            // get input stream
+//            InputStream ims = getAssets().open("opengl.png");
+//            // load image as Drawable
+//            Drawable d = Drawable.createFromStream(ims, null);
+//            // set image to ImageView
+//            iv.setImageDrawable(d);
+//            ims .close();
+//        }
+//        catch(IOException ex)
+//        {
+//            return;
+//        }
+
 
         setContentView(m_Surface);
 
